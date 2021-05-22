@@ -64,7 +64,7 @@ const Home = ({id, go, fetchedUser, scheme}) => {
         </Group>
         <Group>
             <Header mode="secondary">Управление секундами</Header>
-            <Div style={{display: "flex", justifyContent:"space-between"}}>
+            <Div style={{display: "flex", justifyContent:"space-between", overflow:"auto"}}>
                 {bitsInSecond.map((bool, index) => {
                     return <Div key={index} style={{padding:"0", backgroundColor: index + 1 === currentSecond? "#D7FDDB": "#FFFFFF"}}>
                         <Div style={{padding:"0"}}>{index + 1} сек</Div>
