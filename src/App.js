@@ -30,7 +30,7 @@ const App = () => {
             bridge.send("VKWebAppFlashGetInfo").then(
                 (p) => {
                     if (!p.is_available) {
-                        alert("Нет фонарика")
+                        alert("На вашем устройстве отсутствует/не работает фонарик :(")
                     }
                 }
             )

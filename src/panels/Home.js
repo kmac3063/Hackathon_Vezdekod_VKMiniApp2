@@ -47,19 +47,19 @@ const Home = ({id, go, fetchedUser}) => {
         bitsInSecond[index] = bitsInSecond[index] ^ 1
     }
 
-    const startPressed = () => {
+    const startPressed = (bits) => {
         if (myInterval !== null) {
             clearInterval(myInterval)
         }
         let sec = 1
         setCurrentSecond(1)
-        console.log(bitsInSecond[sec - 1])
-        bridge.send("VKWebAppFlashSetLevel", {"level": bitsInSecond[sec - 1]});
+        console.log(bits[sec - 1])
+        bridge.send("VKWebAppFlashSetLevel", {"level": bits[sec - 1]});
         let timerId = setInterval(() => {
             sec = 1 + (sec) % (bitsSize)
             setCurrentSecond(sec)
-            console.log(bitsInSecond[sec - 1])
-            bridge.send("VKWebAppFlashSetLevel", {"level": bitsInSecond[sec - 1]});
+            console.log(bits[sec - 1])
+            bridge.send("VKWebAppFlashSetLevel", {"level": bits[sec - 1]});
         }, 1000);
         setMyInterval(timerId)
     }
@@ -88,20 +88,29 @@ const Home = ({id, go, fetchedUser}) => {
                 />
             </FormItem>
             <Div style={{display: 'flex'}}>
-                <Button size="l" stretched style={{marginRight: 8}} onClick={startPressed}>Начать</Button>
+                <Button size="l" stretched style={{marginRight: 8}} onClick={
+                    () => {startPressed(bitsInSecond)}}>Начать</Button>
                 <Button size="l" stretched mode="secondary" onClick={stopPressed}>Остановить</Button>
             </Div>
         </Group>
         <Group>
             <Header mode="secondary">Управление секундами</Header>
-            {bitsInSecond.map((bool, index) => {
+            {bitsSize > 8 ? bitsInSecond.map((bool, index) => {
                 return <SimpleCell key={index}
                    after={<Switch onChange={(e) => {switchChange(index, e.target.value); }}/>}
                     style={{backgroundColor: index + 1 === currentSecond? "#D7FDDB": "#FFFFFF"}}
                 >
                     {getString(index)}
                 </SimpleCell>
-            })
+            }) : <Div style={{display: "flex"}}>
+                {bitsInSecond.map((bool, index) => {
+                        return <Div style={{padding:"0", marginLeft:"2%", backgroundColor: index + 1 === currentSecond? "#D7FDDB": "#FFFFFF"}}>
+                            <Div style={{padding:"0"}}>1 сек</Div>
+                            <Switch key={index} onChange={(e) => {switchChange(index, e.target.value); }}/>
+                        </Div>
+                    })
+                }
+            </Div>
             }
         </Group>
     </Panel>
