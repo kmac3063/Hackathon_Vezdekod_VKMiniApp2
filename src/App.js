@@ -10,12 +10,19 @@ const App = () => {
     const [activePanel, setActivePanel] = useState('WelcomeScreen');
     const [fetchedUser, setUser] = useState(null);
     const [popout, setPopout] = useState(<ScreenSpinner size='large'/>);
+    const [scheme, setScheme] = useState(null)
+
+    // const schemeAttribute = document.createAttribute('scheme');
+    // schemeAttribute.value = 'dark';
+    // document.body.attributes.setNamedItem(schemeAttribute);
 
     useEffect(() => {
         bridge.subscribe(({detail: {type, data}}) => {
             if (type === 'VKWebAppUpdateConfig') {
-                const schemeAttribute = document.createAttribute('scheme');
-                schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
+                const schemeAttribute = document.createAttribute('scheme')
+                // schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
+                schemeAttribute.value = 'client_light';
+                setScheme(schemeAttribute.value)
                 document.body.attributes.setNamedItem(schemeAttribute);
             }
         });
@@ -51,7 +58,7 @@ const App = () => {
             <AppRoot>
                 <View activePanel={activePanel} popout={popout}>
                     <WelcomeScreen id='WelcomeScreen' fetchedUser={fetchedUser} go={go}/>
-                    <Home id='Home' fetchedUser={fetchedUser} go={go}/>
+                    <Home id='Home' fetchedUser={fetchedUser} go={go} scheme={scheme}/>
                 </View>
             </AppRoot>
         </AdaptivityProvider>
