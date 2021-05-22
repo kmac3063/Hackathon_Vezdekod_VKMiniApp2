@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "/Hackathon_Vezdekod_VKMiniApp2/static/js/main.81ade5d7.chunk.js",
-    "main.js.map": "/Hackathon_Vezdekod_VKMiniApp2/static/js/main.81ade5d7.chunk.js.map",
+    "main.js": "/Hackathon_Vezdekod_VKMiniApp2/static/js/main.1cff2f64.chunk.js",
+    "main.js.map": "/Hackathon_Vezdekod_VKMiniApp2/static/js/main.1cff2f64.chunk.js.map",
     "runtime-main.js": "/Hackathon_Vezdekod_VKMiniApp2/static/js/runtime-main.72cd4d25.js",
     "runtime-main.js.map": "/Hackathon_Vezdekod_VKMiniApp2/static/js/runtime-main.72cd4d25.js.map",
     "static/css/2.a2ab3232.chunk.css": "/Hackathon_Vezdekod_VKMiniApp2/static/css/2.a2ab3232.chunk.css",
-    "static/js/2.a2d2d180.chunk.js": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.a2d2d180.chunk.js",
-    "static/js/2.a2d2d180.chunk.js.map": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.a2d2d180.chunk.js.map",
+    "static/js/2.2189aefd.chunk.js": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.2189aefd.chunk.js",
+    "static/js/2.2189aefd.chunk.js.map": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.2189aefd.chunk.js.map",
     "index.html": "/Hackathon_Vezdekod_VKMiniApp2/index.html",
     "static/css/2.a2ab3232.chunk.css.map": "/Hackathon_Vezdekod_VKMiniApp2/static/css/2.a2ab3232.chunk.css.map",
-    "static/js/2.a2d2d180.chunk.js.LICENSE.txt": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.a2d2d180.chunk.js.LICENSE.txt",
+    "static/js/2.2189aefd.chunk.js.LICENSE.txt": "/Hackathon_Vezdekod_VKMiniApp2/static/js/2.2189aefd.chunk.js.LICENSE.txt",
     "static/media/persik.ae9f0072.png": "/Hackathon_Vezdekod_VKMiniApp2/static/media/persik.ae9f0072.png"
   },
   "entrypoints": [
     "static/js/runtime-main.72cd4d25.js",
     "static/css/2.a2ab3232.chunk.css",
-    "static/js/2.a2d2d180.chunk.js",
-    "static/js/main.81ade5d7.chunk.js"
+    "static/js/2.2189aefd.chunk.js",
+    "static/js/main.1cff2f64.chunk.js"
   ]
 }
